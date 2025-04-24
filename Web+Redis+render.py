@@ -86,7 +86,7 @@ async def consume_tx():
 # 提供给 Coze Agent 的接口
 @app.get("/alerts")
 async def get_alerts():
-    return JSONResponse(content=latest_alerts)
+    return JSONResponse(content={"alerts": latest_alerts})
 
 # 启动监听逻辑并集成 FastAPI
 @app.on_event("startup")
